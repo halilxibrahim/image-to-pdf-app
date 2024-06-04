@@ -1,20 +1,21 @@
-"use client"
+"use client";
 
 import React from 'react';
 import axios from 'axios';
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-r from-red-300 to-blue-300 text-white py-4 text-center fixed top-0 left-0 right-0 z-10">
-      <h1 className="text-3xl font-bold">Image to PDF Converter</h1>
+    <header className="text-white py-4 text-center fixed top-0 left-0 right-0 z-10 bg-gradient-to-r from-blue-600 to-green-500">
+      <h1 className="text-3xl font-bold">Dosyalarınızı Kolayca Dönüştürün</h1>
+      <p className="text-lg">Ses, Video ve diğer Dosyalarınızı bir formattan diğerine çevrimiçi olarak ücretsiz dönüştürün!</p>
     </header>
   );
 };
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-4 text-center fixed bottom-0 left-0 right-0 z-10">
-      <p>© 2024 Image to PDF Converter. All rights reserved. @Halil ibrahim</p>
+    <footer className="text-white py-4 text-center fixed bottom-0 left-0 right-0 z-10 bg-gray-800">
+      <p> ©2024 Image to PDF Converter. All rights reserved. @Halil Ibrahim</p>
     </footer>
   );
 };
@@ -54,25 +55,27 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main className="container mx-auto px-4 py-8 mt-20">
-        <div className="max-w-lg mx-auto">
+      <main className="flex flex-col items-center justify-center min-h-screen py-20 bg-gradient-to-b from-blue-900 to-blue-600 text-white">
+        <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
           <form onSubmit={handleSubmit} className="flex flex-col items-center">
-            <input
-              type="file"
-              onChange={handleFileChange}
-              className="mt-2"
-            />
+            <div className="mb-4 w-full">
+              <input
+                type="file"
+                onChange={handleFileChange}
+                className="w-full p-2 border border-gray-300 rounded-lg"
+              />
+            </div>
             <button
               type="submit"
-              className="px-4 py-2 mt-4 font-semibold text-white bg-blue-500 rounded hover:bg-blue-700 w-full"
+              className="w-full px-4 py-2 font-semibold text-white bg-blue-500 rounded hover:bg-blue-700"
             >
-              Convert to PDF
+              PDF Dönüştür
             </button>
           </form>
           {pdfPath && (
             <div className="mt-4">
               <h2 className="text-xl font-semibold">Converted PDF</h2>
-              <a href={pdfPath} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+              <a href={pdfPath} target="_blank" rel="noopener noreferrer" className="text-blue-300 underline">
                 Download PDF
               </a>
             </div>
